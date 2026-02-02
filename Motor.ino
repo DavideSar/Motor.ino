@@ -8,6 +8,8 @@ bool ledState = 0;
 const byte TIP120_PIN = 3;
 bool motState = 0;
 
+const byte POT_PIN = 0;
+
 int rm = 0;
 
 //int click = 0;
@@ -58,6 +60,27 @@ void loop() {
   // digitalWrite(TIP120_PIN, motState);
 
   //motor.ino rampe velocità ----------------------------------------------------------------------
+  // btnState = digitalRead(BTN_PIN);
+
+  // if (btnState == 1 && btnState != lastBtnState){
+
+  //   for(rm = 0; rm <=255; rm++){
+  //     analogWrite(TIP120_PIN, rm);
+  //     analogWrite(LED_PIN, rm);
+  //     delay(10);
+  //   }
+
+  //   for(rm = 255; rm >=0; rm--){
+  //     analogWrite(TIP120_PIN, rm);
+  //     analogWrite(LED_PIN, rm);
+  //     delay(10);
+  //   }
+
+  // }
+
+  // lastBtnState = btnState;
+
+  //motor.ino controllo velocità con potenziometro ------------------------------------------------
   btnState = digitalRead(BTN_PIN);
 
   if (btnState == 1 && btnState != lastBtnState){
@@ -77,6 +100,4 @@ void loop() {
   }
 
   lastBtnState = btnState;
-
-  //motor.ino controllo velocità 
 }
